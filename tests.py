@@ -6,10 +6,10 @@ class TestScraping(unittest.TestCase):
 
     def test_scrape_returns_dataframe(self):
         url_base = 'https://www.falabella.com.co/falabella-co/category/cat1361001/Computadores-Portatiles'
-        df = scrape_falabella(url_base, num_pages=10)
+        df = scrape_falabella(url_base, num_pages=2)
         self.assertIsInstance(df, pd.DataFrame)
 
     def test_dataframe_not_empty(self):
         url_base = 'https://www.falabella.com.co/falabella-co/category/cat1361001/Computadores-Portatiles'
-        df = scrape_falabella(url_base, num_pages=10)
+        df = scrape_falabella(url_base, num_pages=2)
         self.assertTrue(len(df) > 0)

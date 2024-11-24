@@ -37,11 +37,7 @@ def scrape_falabella(url_base, num_pages=10):
         except requests.exceptions.RequestException as e:
             logging.error(f"Error al obtener la página {url}: {e}")
             break # Detener el scraping si hay un error de red
-
-        # Guardar datos
-        df.to_csv('laptops_data.csv', index=False)
-        print("\nLos datos han sido guardados en 'laptops_data.csv'")
-
+       
     return pd.DataFrame(data)
 
 
